@@ -66,13 +66,13 @@ int main()
 	
 	}
 	
-	long long int sum=0;
+	long int sum=0;
 	
 	for(int i=0;i<gcount-1;i++)
 		for(int j=i+1;j<gcount;j++)
 		{
-			sum += (long long)abs(g[j][0] - g[i][0]);
-			sum += (long long)abs(g[j][1] - g[i][1]);
+			sum += abs(g[j][0] - g[i][0]);
+			sum += abs(g[j][1] - g[i][1]);
 			
 
 			int min, max;
@@ -88,7 +88,7 @@ int main()
 			}				
 			for(int a=0;a<rbcount;a++)
 				if(rowblank[a]>min && rowblank[a]<max)
-					sum+=(long long)EXPFACTOR;	
+					sum+=EXPFACTOR;	
 
 			
 			if(g[i][1]<g[j][1])
@@ -104,10 +104,10 @@ int main()
 
 			for(int a=0;a<cbcount;a++)
 				if(colblank[a]>min && colblank[a]<max)
-					sum+=(long long)EXPFACTOR;
+					sum+=EXPFACTOR;
 	
 		}
 	
-	printf("%d\n",sum);
+	printf("%ld\n",sum);
 	return 0;
 }
