@@ -37,7 +37,7 @@ int move(int x, int y, int going)
 	switch(nextblock)
 	{
 		case 'S':
-			printf("%d\n",steps/2);
+			printf("%d\n",(steps+1)/2);
 			exit(0);
 		case 'F':
 			if(going==UP) nextgoing=RIGHT;
