@@ -8,8 +8,6 @@
 struct node {
 	int content;
 	struct node* next;
-	struct node* down;
-	struct node* up;
 };
 
 int lastnumbers[MAXN];
@@ -29,13 +27,10 @@ void go_up()
 void go_down(struct node *head)
 {
 	struct node *downhead = malloc(sizeof(struct node));
-	downhead->up = head;
 	downhead->next = NULL;
-	downhead->down = NULL;
+
 	struct node *downcurrent;
 	downcurrent = downhead;
-	
-	head->down = downhead;
 	
 	struct node *current;
 	current = head;
@@ -84,7 +79,7 @@ void process_array(int input[], int inputcount)
 {
 	struct node *head = malloc(sizeof(struct node));
 	head->content = input[0];
-	head->up = head->down = head->next = NULL;
+	head->next = NULL;
 	struct node *current;
 	current=head;
 	for(int i=1; i<inputcount; i++)
